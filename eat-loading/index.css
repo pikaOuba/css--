@@ -1,0 +1,107 @@
+html,body{
+    background: #0CCCC8;
+}
+.loading {
+    width: 200px;
+    height: 200px;
+    display: flex;
+    display: -webkit-flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid #ddd; */
+}
+.ball_eating{
+    position: relative;
+    top: -25px;
+    left: -25px;
+}
+.ball_eating div:nth-child(1),
+.ball_eating div:nth-child(2){
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 25px solid #fff;
+    border-radius: 50%;
+    border-right-color: transparent;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+.ball_eating div:nth-child(3),
+.ball_eating div:nth-child(4),
+.ball_eating div:nth-child(5){
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    top: 20px;
+    left: 90px;
+    background-color: #fff;
+    border-radius: 50%;
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+    -webkit-animation: ball_eating_move .9s linear infinite;
+            animation: ball_eating_move .9s linear infinite;
+}
+.ball_eating div:nth-child(3){
+    -webkit-animation-delay: 0.3s;
+            animation-delay: 0.3s;
+}
+.ball_eating div:nth-child(4){
+    -webkit-animation-delay: 0.6s;
+            animation-delay: 0.6s;
+}
+.ball_eating div:nth-child(5){
+    -webkit-animation-delay: 0.9s;
+            animation-delay: 0.9s;
+}
+
+@keyframes ball_eating_move {
+    50% {
+        opacity: 0.7;
+    }
+    100% {
+        -webkit-transform: translate(-80px, 0);
+        transform: translate(-80px, 0);
+    }
+}
+
+.ball_eating div:nth-child(1){
+    -webkit-animation: ball_eating_up .5s linear infinite;
+            animation: ball_eating_up .5s linear infinite;
+}
+
+.ball_eating div:nth-child(2){
+    -webkit-animation: ball_eating_down .5s linear infinite;
+            animation: ball_eating_down .5s linear infinite;
+}
+
+@keyframes ball_eating_up {
+    0%{
+        -webkit-transform: rotate(0);
+                transform: rotate(0);
+    }
+    50%{
+        -webkit-transform: rotate(90DEG);
+                transform: rotate(90DEG);
+    }
+    100%{
+        -webkit-transform: rotate(0);
+                transform: rotate(0);
+    }
+}
+
+@keyframes ball_eating_down {
+    0%{
+        -webkit-transform: rotate(0);
+        transform: rotate(0);
+    }
+    50%{
+        -webkit-transform: rotate(-90DEG);
+        transform: rotate(-90DEG);
+    }
+    100%{
+        -webkit-transform: rotate(0);
+        transform: rotate(0);
+    }
+}
